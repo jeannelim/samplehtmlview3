@@ -6,6 +6,8 @@ import 'package:js/js.dart';
 import 'dart:html' as html;
 import 'dart:ui' as ui;
 
+import 'package:pointer_interceptor/pointer_interceptor.dart';
+
 @JS('setLicenseKey')
 external void setLicenseKey(String key);
 
@@ -39,18 +41,16 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        width: 500,
-        height: 400,
-        child: Stack(children: <Widget>[
+      body: Stack(children: <Widget>[
           MyHtmlView(),
         ]),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          load();
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: PointerInterceptor(
+              child: FloatingActionButton(
+          onPressed: () {
+            load();
+          },
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
