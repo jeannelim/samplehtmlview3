@@ -13,8 +13,7 @@ external void setLicenseKey(String key);
 external void loadPdf();
 
 void main() {
-  setLicenseKey("Aa5ctxMMwxipLkMtAO1-lW6YSanOyjKhfK2qglok1btZmDbFTqvnXbh8FvAN9U06n7iTj7KVRnqMCkkFoZGJv04_p36gSTktxJijPYu4vTXGfIKMZA_Sm3kb5zONLCQK-zKRpY6WcDZ79ui6OkH6m2tIPHilB_fQ2mJPyGJWLloXpp0JKniMxKLAdOuhsspgf6PYj8mtzlSbl5CXpdu8W7mLMo6UJSBdGFMzf6AKfCkjUpt36AJI6YhapKko0J1Ql87gKXgWjFimgoUZCkOi37DucU6qDWWGzq-vuiMAYZO232zHn4Bu3mt773FWb86uUsOErY43fveIYek8IQaTa2e6pe4YNTvpfe42OnvRx72a5-1fNQYOonwLcGDUFuFheIX_tMUGuPgwXhpjkD0pNi0I-5bGuG63mKGUEPUY35akiefyLVwW7saN-Ss7jH1WUMOiuWsxtB7qxuX0Gf73Pw==");
-
+  setLicenseKey("XwOUG_sN2zXcnlg-iTrQKenBfRXgvpAmFUKc4JX2c8QgXt4mnBcwUC9spJ71l-0a8ktpuTN7T8eMf_P092dB4pq3zcboVIfwEP_ICi9FvOwSezOtuszCZkEhsTp_gXClwPKO-E-edSyaTO9BffCZ9XrZkZbQOhOu_GmX2O3sv7o--ktEKRvddW3k8BRSg1Fca9Y3gwvLVXalIK3U3FQsWlfnrK6KklL-deyXtycrporCVnVlWb7wTvqirngJFZ9Og7OZF5A4TvsjGEPYnNvI2f4KWI7p0OHefThh5rIH6fg86n_Oj0A2wCWIv7tf-LZQj1rjdw7PvkOvZI0O1KDgYHvM9RgaArJ46qJqkizHRV09YgweeUzLBouJXjalhCkOYy0dFOv_Bhf2oW7aLEgxpqODRuHCZue1SwU6QQMk2vSnfxbiPyWyrIwBck6hKCtlYNfcpxUE_M_L_XRrlpNPKw==");  
   runApp(MaterialApp(home: MyHomePage()));
 }
 
@@ -40,9 +39,13 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Stack(children: <Widget>[
-        MyHtmlView(),
-      ]),
+      body: Container(
+        width: 500,
+        height: 400,
+        child: Stack(children: <Widget>[
+          MyHtmlView(),
+        ]),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           load();
@@ -81,10 +84,10 @@ class MyHtmlViewState extends State<MyHtmlView>{
       final div = html.DivElement()
         ..id = 'myPdfDiv'
         ..style.width = '100%'
-        ..style.height = '100%'
-        ..style.position = 'fixed'
-        ..style.top = '0px';
-      return div;
+        ..style.height = '100%';
+        //..style.position = 'fixed'
+        //..style.top = '0px';
+    return div;
     });
   }
 
